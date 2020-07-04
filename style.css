@@ -70,7 +70,7 @@ body {
     height: 100%;
 }
 
-.menu-text-container {
+.menu-text-container-1 {
     width: 100px;
     text-align: center;
     list-style-type:none;
@@ -78,7 +78,7 @@ body {
     display: block;
 }
 
-.menu-text {
+.menu-text-1 {
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
@@ -86,6 +86,26 @@ body {
     margin-top: 10px;
 }
 
-.menu-text:hover {
+.menu-text-1:hover {
+    text-decoration: underline;
+}
+
+.menu-text-container-2 {
+    width: 100px;
+    text-align: left;
+    list-style-type:none;
+    color: white;
+    display: block;
+}
+
+.menu-text-2 {
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.menu-text-2:hover {
     text-decoration: underline;
 }
