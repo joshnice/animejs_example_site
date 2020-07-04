@@ -31,6 +31,11 @@ body {
 #github-icon {
     flex-shrink: 1;
     font-size: 40px;
+    color: #666666;
+}
+
+#github-icon:hover {
+   color: black;
 }
 
 .row {

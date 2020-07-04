@@ -9,7 +9,7 @@ window.onload = async function() {
     }
 
     const side_bar_menu_animations = anime({
-        targets: '#basic-box',
+        targets: '#side-menu-example-1',
         borderRadius: ['50%', '0%'],
         easing: 'easeInOutQuad',
         width: '300px',
@@ -21,15 +21,9 @@ window.onload = async function() {
         }
     });
 
-
-
-    $( "#basic-box" ).on( "click", async  function() {
+    $( "#side-menu-example-1" ).on( "click", async  function() {
         await side_bar_menu_animations.play();
     });
-    
-
-    
-
 };
 
 function insertingMenuElements() {
@@ -40,7 +34,6 @@ function insertingMenuElements() {
         menu_text_ids.push(menu_text_elements[i].id);
     }
 
-    console.log('menu text ids', menu_text_ids);
     return menu_text_ids;
 }
 
