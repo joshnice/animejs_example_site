@@ -9,7 +9,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.1"
-  }
+  "dependencies": {}
 }
