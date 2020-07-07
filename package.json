@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.1",
-    "milligram": "^1.4.1"
+    "@fortawesome/fontawesome-free": "^5.13.1"
   }
 }
