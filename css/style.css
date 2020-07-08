@@ -67,7 +67,7 @@ body {
 .box-container {
     display: flex;
     justify-content: space-evenly;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 #menu-example {
@@ -125,7 +125,6 @@ body {
     height: 50px;
     background-color: black;
     border-radius: 50%;
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,4 +148,21 @@ body {
     position: absolute;
     right: 13px;
     top: 8px;
+}
+
+.notification-header {
+    margin-bottom: 5px;
+    font-weight: 550;
+}
+
+.notification {
+    margin-bottom: 5px;
+}
+
+#notification-text {
+    margin: 10% 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
 }

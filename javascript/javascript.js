@@ -10,17 +10,71 @@ window.onload = async function() {
 
 function notificationAnimations() {
 
+    let allow_notifications_open = false;
+
     $('#notification-alert-1').hide();
+    $('#not-header').hide();
+    $('#notification-group').hide();
+    $('#notification-text').hide();
     
-    // notifications animation 1
-    const end_new_animation = anime(createNotificationAnimation('#notification-example-1', 3, 200, 3));
-    const start_new_animation = anime(createNotificationAnimation('#notification-example-1', 5, 200, 7  , () => {end_new_animation.play()}));
+    
+    // notifications animation alert
+    const end_new_animation = anime(createNotificationAnimation('#notification-example-1', 3, 200, 2));
+    const start_new_animation = anime(createNotificationAnimation('#notification-example-1', 5, 200, 6, () => {end_new_animation.play()}));
+
+    const open_notifications = anime({
+        targets: '#notification-example-1',
+        borderRadius: ['50%', '5%'],
+        easing: 'easeInOutQuad',
+        width: '300px',
+        height: ['50px', '200px'],
+        duration: 3000,
+        backgroundColor: '#FFF',
+        border: '2px solid black',
+        autoplay: false,
+        complete : () => {
+            $('#notification-text').show();
+            $('#not-header').show();
+            notification_header_animation.play();
+        }
+    });
+
+    const notification_header_animation = anime({    
+        targets: '.notification-header',
+        translateX: 10,
+        easing: 'easeInOutQuad',
+        duration: 500,
+        autoplay: false,
+        complete : () => {
+            $('#notification-group').show();
+            notifications_animation.play();
+        }
+    });
+
+    const notifications_animation = anime({    
+        targets: '.notification',
+        translateX: 10,
+        easing: 'easeInOutQuad',
+        duration: 500,
+        autoplay: false
+    });
+
+
 
     $("#new-notification-button-1").on( "click", function() {
         start_new_animation.play();
         $('#notification-alert-1').show();
+        $("#notification-example-1").css("cursor", 'pointer');
+        allow_notifications_open = true;
     });
-   
+
+    $('#notification-example-1').on("click", function () {
+        if (allow_notifications_open) {
+            $('#notification-alert-1').hide();
+            $('#notification-bell-1').hide();
+            open_notifications.play();
+        }
+    });
 
 }
 
