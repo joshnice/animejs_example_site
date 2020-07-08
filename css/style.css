@@ -22,6 +22,14 @@ body {
     padding-bottom: 0px;
 }
 
+@media all and (min-width: 1024px) {
+    #contents {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 #page-title {
     flex-shrink: 0;
     flex-grow: 1;
@@ -52,14 +60,15 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .example-header {
     margin-bottom: 0px;
     margin-top: 20px;
 }
 
 .box {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     background-color: black;
     cursor: pointer;
 }
@@ -165,4 +174,12 @@ body {
     display: flex;
     flex-direction: column;
     height: 90%;
+}
+
+#example_three {
+    height: 500px;
+}
+
+#example_four {
+    height: 500px;
 }
