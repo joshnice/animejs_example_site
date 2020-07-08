@@ -142,3 +142,11 @@ body {
 .notification-bell {
     color: white;
 }
+
+.notification-circle {
+    color: white;
+    font-size: 5px;
+    position: absolute;
+    right: 13px;
+    top: 8px;
+}

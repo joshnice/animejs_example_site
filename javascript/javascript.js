@@ -9,29 +9,36 @@ window.onload = async function() {
 };
 
 function notificationAnimations() {
+
+    $('#notification-alert-1').hide();
     
     // notifications animation 1
-    const new_notification_animation = anime({
-        targets: '#notification-example-1',
-        keyframes: [
-            {translateX: 5},
-            {translateX: -5},
-            {translateX: 0}
-        ],
-        duration: 200,
-        loop: 5,
-        easing: 'linear',
-        autoplay: false, 
-    });
+    const end_new_animation = anime(createNotificationAnimation('#notification-example-1', 3, 200, 3));
+    const start_new_animation = anime(createNotificationAnimation('#notification-example-1', 5, 200, 7  , () => {end_new_animation.play()}));
 
-    $("#new-notification-button-1").on( "click", async  function() {
-        console.log('play one');
-        await  new_notification_animation.play();
+    $("#new-notification-button-1").on( "click", function() {
+        start_new_animation.play();
+        $('#notification-alert-1').show();
     });
    
 
 }
 
+function createNotificationAnimation(target, translate, duration, loop, complete = () => {}) {
+    return { 
+        targets: target,
+        keyframes: [
+            {translateX: translate},
+            {translateX: -(translate)},
+            {translateX: 0}
+        ],
+        duration: duration,
+        loop: loop,
+        easing: 'linear',
+        autoplay: false,
+        complete: complete
+    }
+}
 
 function sideMenuAnimations() {
     const window_height = window.innerHeight;
@@ -59,8 +66,8 @@ function sideMenuAnimations() {
         }
     });
 
-    $( "#side-menu-example-1" ).on( "click", async  function() {
-        await side_bar_menu_animations.play();
+    $( "#side-menu-example-1" ).on( "click", function() {
+        side_bar_menu_animations.play();
     });
 
 
@@ -81,8 +88,8 @@ function sideMenuAnimations() {
         }
     });
 
-    $("#side-menu-example-2").on( "click", async  function() {
-        await side_bar_menu_animations_2.play();
+    $("#side-menu-example-2").on( "click", function() {
+        side_bar_menu_animations_2.play();
     });
 }
 
