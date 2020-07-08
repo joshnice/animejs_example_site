@@ -22,22 +22,8 @@ function notificationAnimations() {
     const end_new_animation = anime(createNotificationAnimation('#notification-example-1', 3, 200, 2));
     const start_new_animation = anime(createNotificationAnimation('#notification-example-1', 5, 200, 6, () => {end_new_animation.play()}));
 
-    const open_notifications = anime({
-        targets: '#notification-example-1',
-        borderRadius: ['50%', '5%'],
-        easing: 'easeInOutQuad',
-        width: '300px',
-        height: ['50px', '200px'],
-        duration: 3000,
-        backgroundColor: '#FFF',
-        border: '2px solid black',
-        autoplay: false,
-        complete : () => {
-            $('#notification-text').show();
-            $('#not-header').show();
-            notification_header_animation.play();
-        }
-    });
+    const open_notifications = anime(createBlockChangeAnimation('#notification-example-1', ['50%', '5%'], '300px', ['50px', '200px'], 3000,
+        '#FFF', '2px solid black', () => { $('#notification-text').show(); $('#not-header').show(); notification_header_animation.play();}));
 
     const notification_header_animation = anime({    
         targets: '.notification-header',
@@ -76,6 +62,21 @@ function notificationAnimations() {
         }
     });
 
+}
+
+function createBlockChangeAnimation(target, border_radius, width, height, duration, colour, border, complete = () => {}) {
+    return {
+        targets: target,
+        borderRadius: border_radius,
+        easing: 'easeInOutQuad',
+        width: width,
+        height: height,
+        duration: duration,
+        backgroundColor: colour,
+        border: border,
+        autoplay: false,
+        complete : complete
+    }
 }
 
 function createNotificationAnimation(target, translate, duration, loop, complete = () => {}) {
