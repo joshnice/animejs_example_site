@@ -2,7 +2,38 @@ let translate_x, direction;
 
 window.onload = async function() {
 
+    sideMenuAnimations();
+    notificationAnimations();
+
     console.log('loading is complete');
+};
+
+function notificationAnimations() {
+    
+    // notifications animation 1
+    const new_notification_animation = anime({
+        targets: '#notification-example-1',
+        keyframes: [
+            {translateX: 5},
+            {translateX: -5},
+            {translateX: 0}
+        ],
+        duration: 200,
+        loop: 5,
+        easing: 'linear',
+        autoplay: false, 
+    });
+
+    $("#notification-example-1").on( "click", async  function() {
+        console.log('play one');
+        await  new_notification_animation.play();
+    });
+   
+
+}
+
+
+function sideMenuAnimations() {
     const window_height = window.innerHeight;
     const menu_text_1 = insertingMenuElements('menu-text-1');
     const menu_text_2 = insertingMenuElements('menu-text-2');
@@ -53,7 +84,7 @@ window.onload = async function() {
     $("#side-menu-example-2").on( "click", async  function() {
         await side_bar_menu_animations_2.play();
     });
-};
+}
 
 function insertingMenuElements(name) {
     const menu_text_elements = document.getElementsByClassName(name);
