@@ -24,7 +24,7 @@ function notificationAnimations() {
         autoplay: false, 
     });
 
-    $("#notification-example-1").on( "click", async  function() {
+    $("#new-notification-button-1").on( "click", async  function() {
         console.log('play one');
         await  new_notification_animation.play();
     });

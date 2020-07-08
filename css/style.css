@@ -71,7 +71,7 @@ body {
 }
 
 #menu-example {
-    height: 275px;
+    /*height: 275px;*/
 }
 
 .menu-text-container-1 {
@@ -117,7 +117,7 @@ body {
 /*Notification examples*/
 
 #notification-example {
-    height: 275px;
+    /*height: 275px;*/
 }
 
 .notification-box {
@@ -127,6 +127,14 @@ body {
     border-radius: 50%;
     cursor: pointer;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.notification-container {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

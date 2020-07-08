@@ -27,17 +27,17 @@
         <h4>Choose an example</h4>
 
         <div class="row">
-            <div class="column column-25 column-container"><button class="button-black">Side Bar Menu</button></div>
-            <div class="column column-25 column-container"><button class="button-black">Notifications</button></div>
-            <div class="column column-25 column-container"><button class="button-black">Image Viewer</button></div>
-            <div class="column column-25 column-container"><button class="button-black">Loading Spinner</button></div>
+            <div class="column column-25 column-container"><a href="#example_one"><button class="button-black">Side Bar Menu</button></a></div>
+            <div class="column column-25 column-container"><a href="#example_two"><button class="button-black">Notifications</button></a></div>
+            <div class="column column-25 column-container"><a href="#example_three"><button class="button-black">Image Viewer</button></a></div>
+            <div class="column column-25 column-container"><a href="#example_four"><button class="button-black">Loading Spinner</button></a></div>
         </div>
 
 
         <div id="example_one">
 
             <h4 class="example-header">Side Bar Menu</h4>
-            <p class="example-desc">Example of how a side bar menu (click to open menu)</p>
+            <p class="example-desc">Example of side bar menu (click to open menu)</p>
 
             <div class="box-container" id="menu-example">
                 <div id="side-menu-example-1" class="box">
@@ -60,12 +60,15 @@
         <div id="example_two">
 
             <h4 class="example-header">Notifications</h4>
-            <p class="example-desc">Example how notifications icon could work</p>
+            <p class="example-desc">Example of notifications (click button to add notification and notification bell to view it)</p>
 
             <div class="box-container" id="notification-example">
 
-                <div id="notification-example-1" class="notification-box">
-                    <i class="fas fa-bell notification-bell"></i>
+                <div class="notification-container">
+                    <div id="notification-example-1" class="notification-box">
+                        <i class="fas fa-bell notification-bell"></i>
+                    </div>
+                    <button class="button-black" id="new-notification-button-1">New Notification</button>
                 </div>
 
                 <div id="notification-example-2" class="notification-box">
