@@ -77,8 +77,6 @@ function animateMenuText(menu_text, index = 0) {
 
     $('#' + menu_text[index]).show();
 
-    console.log('animation direction', animation_direction);
-
     const side_bar_text_animaition = anime({    
         targets: '#' + menu_text[index],
         translateX: translate_actual_x,
