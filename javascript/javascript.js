@@ -23,29 +23,10 @@ function notificationAnimations() {
     const start_new_animation = anime(createNotificationAnimation('#notification-example-1', 5, 200, 6, () => {end_new_animation.play()}));
 
     const open_notifications = anime(createBlockChangeAnimation('#notification-example-1', ['50%', '5%'], '300px', ['50px', '200px'], 3000,
-        '#FFF', '2px solid black', () => { $('#notification-text').show(); $('#not-header').show(); notification_header_animation.play();}));
+        '#FFF', '2px solid black', () => {$('#notification-text').show(); $('#not-header').show(); notification_header_animation.play();}));
 
-    const notification_header_animation = anime({    
-        targets: '.notification-header',
-        translateX: 10,
-        easing: 'easeInOutQuad',
-        duration: 500,
-        autoplay: false,
-        complete : () => {
-            $('#notification-group').show();
-            notifications_animation.play();
-        }
-    });
-
-    const notifications_animation = anime({    
-        targets: '.notification',
-        translateX: 10,
-        easing: 'easeInOutQuad',
-        duration: 500,
-        autoplay: false
-    });
-
-
+    const notification_header_animation = anime(createTextAnimation('.notification-header', 10, 500, () => {$('#notification-group').show(); notifications_animation.play();}));
+    const notifications_animation = anime(createTextAnimation('.notification', 10, 500));
 
     $("#new-notification-button-1").on( "click", function() {
         start_new_animation.play();
@@ -56,12 +37,29 @@ function notificationAnimations() {
 
     $('#notification-example-1').on("click", function () {
         if (allow_notifications_open) {
+            allow_notifications_open = false;
+            $("#notification-example-1").css("cursor", 'default');
             $('#notification-alert-1').hide();
             $('#notification-bell-1').hide();
             open_notifications.play();
+        } else {
+            // TODO: Close notifications
         }
     });
 
+    // TODO: Dismiss notifications
+
+}
+
+function createTextAnimation(target, translate, duration, complete = () => {}) {
+    return {    
+        targets: target,
+        translateX: translate,
+        easing: 'easeInOutQuad',
+        duration: duration,
+        autoplay: false,
+        complete : complete
+    }
 }
 
 function createBlockChangeAnimation(target, border_radius, width, height, duration, colour, border, complete = () => {}) {
