@@ -112,7 +112,7 @@ function sideMenuAnimations() {
         borderRadius: ['50%', '0%'],
         easing: 'easeInOutQuad',
         width: '300px',
-        height: ['125px', window_height / 4],
+        height: ['100px', window_height / 4],
         duration: 3000,
         autoplay: false,
         complete: function() {
@@ -131,7 +131,7 @@ function sideMenuAnimations() {
         targets: '#side-menu-example-2',
         rotate: [-180, 0],
         width: '300px',
-        height: ['125px', window_height / 4],
+        height: ['100px', window_height / 4],
         duration: 4000,
         easing: 'easeInOutExpo',
         autoplay: false, 
