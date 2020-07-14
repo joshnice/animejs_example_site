@@ -112,7 +112,7 @@ function sideMenuAnimations() {
         borderRadius: ['50%', '0%'],
         easing: 'easeInOutQuad',
         width: '300px',
-        height: ['100px', window_height / 4],
+        height: ['100px', calculateBoxHeight(window_height)],
         duration: 3000,
         autoplay: false,
         complete: function() {
@@ -131,7 +131,7 @@ function sideMenuAnimations() {
         targets: '#side-menu-example-2',
         rotate: [-180, 0],
         width: '300px',
-        height: ['100px', window_height / 4],
+        height: ['100px', calculateBoxHeight(window_height)],
         duration: 4000,
         easing: 'easeInOutExpo',
         autoplay: false, 
@@ -182,6 +182,16 @@ function animateMenuText(menu_text, index = 0) {
     });
 
     side_bar_text_animaition.play();
+}
+
+function calculateBoxHeight(window_height) {
+    const box_height = window_height / 4;
+
+    if (box_height > 190) {
+        return 190;
+    }
+
+    return box_height;
 }
 
 function anchorAnimationScrolling() {
