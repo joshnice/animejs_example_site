@@ -112,7 +112,7 @@ function sideMenuAnimations() {
         borderRadius: ['50%', '0%'],
         easing: 'easeInOutQuad',
         width: '300px',
-        height: ['100px', calculateBoxHeight(window_height)],
+        height: ['50px', calculateBoxHeight(window_height)],
         duration: 3000,
         autoplay: false,
         complete: function() {
@@ -121,9 +121,33 @@ function sideMenuAnimations() {
         }
     });
 
-    $( "#side-menu-example-1" ).on( "click", function() {
-        side_bar_menu_animations.play();
+    const icon_hide_burger = anime({
+        targets: '#menu-text-content-1',
+        opacity: 0,
+        duration: 300,
+        easing: 'linear',
+        autoplay: false,
+        complete: function() {
+            $('#menu-text-content-1').hide();
+            side_bar_menu_animations.play();
+        }
+      });
+
+    $("#side-menu-example-1").on( "click", function() {
+        icon_hide_burger.play()    
     });
+
+    const icon_hide_logo = anime({
+        targets: '#menu-text-content-2',
+        opacity: 0,
+        duration: 300,
+        easing: 'linear',
+        autoplay: false,
+        complete: function() {
+            $('#menu-text-content-2').hide();
+            side_bar_menu_animations_2.play();
+        }
+      });
 
 
     // side bar animation 2
@@ -131,7 +155,7 @@ function sideMenuAnimations() {
         targets: '#side-menu-example-2',
         rotate: [-180, 0],
         width: '300px',
-        height: ['100px', calculateBoxHeight(window_height)],
+        height: ['50px', calculateBoxHeight(window_height)],
         duration: 4000,
         easing: 'easeInOutExpo',
         autoplay: false, 
@@ -144,7 +168,7 @@ function sideMenuAnimations() {
     });
 
     $("#side-menu-example-2").on( "click", function() {
-        side_bar_menu_animations_2.play();
+        icon_hide_logo.play();
     });
 }
 

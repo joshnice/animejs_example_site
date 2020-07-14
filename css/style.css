@@ -67,10 +67,12 @@ body {
 }
 
 .box {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: black;
     cursor: pointer;
+    position: relative;
+    border-radius: 5px;
 }
 
 .box-container {
@@ -89,6 +91,26 @@ body {
     list-style-type:none;
     color: white;
     display: block;
+    position: relative;
+}
+
+#menu-text-content-1 {
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 10px);
+    margin-left: 1px;
+}
+
+#menu-text-content-2 {
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+    transform: rotate(180deg);
+    margin-left: 2px;
 }
 
 .menu-text-1 {
