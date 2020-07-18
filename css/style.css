@@ -205,3 +205,21 @@ body {
 #example_four {
     height: 500px;
 }
+
+/*Scroll Bar*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #bfbfbf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cccccc; 
+}
